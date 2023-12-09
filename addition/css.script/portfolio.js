@@ -421,9 +421,9 @@ document.body.addEventListener('keydown', function (e) {
   if ((e.ctrlKey || e.metaKey) && e.altKey && e.key === 'i') {
     e.preventDefault();
   }
-  // if (e.keyCode == 123) {
-  //   e.preventDefault();
-  // }
+  if (e.keyCode == 123) {
+    e.preventDefault();
+  }
   speak(); 
 });
 
