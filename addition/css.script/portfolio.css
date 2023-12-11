@@ -310,10 +310,11 @@ section .title::after {
   transform: translateX(-50%);
 }
 .column:not(.image) {
-  padding: 5px;
+ padding: 5px;
   border-radius: 12.3px;
   background: var(--dimlight);
-   box-shadow: 20px 30px 60px #0000003b, inset -20px -20px 60px #ffffff3a;
+  border: 4px solid #0000003b;
+   box-shadow: 20px 30px 60px #0000003b, inset 20px 20px 60px var(--grey);
    color: var(--dark);
 }
 
@@ -352,19 +353,30 @@ section .title::after {
   overflow: hidden;
   border-radius: 50%;
   z-index: 1;
-  padding: 7px 9px 3px 7px;
-  border: 5px dashed var(--danger);
-  animation: Rotate 2s linear infinite;
+  padding: 9px 11px 5px 9px;
+}
+.imgContainer::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  animation: Rotate 2.5s linear infinite;
 }
 @keyframes Rotate {
-  0%,100%{
-    border: 5px solid var(--danger);
+  0%{ transform: rotate(0deg);
+    background-image: conic-gradient(
+      #AAAAAA 20deg,
+      transparent 130deg
+    );
   }
-  30%{
-    border: 5px dashed var(--danger);
-  }
-  70%{
-    border: 5px dotted var(--danger);
+  100%{ transform: rotate(-360deg);
+    background-image: conic-gradient(
+      #000 20deg,
+      transparent 130deg
+    );
   }
 }
 .object img {
@@ -533,6 +545,7 @@ section .title::after {
 
 .service .service-content .card .box {
   transition: all 0.5s ease;
+   color: var(--grey);
 }
 
 .service .service-content .card .box p,
