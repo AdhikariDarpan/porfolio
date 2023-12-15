@@ -759,6 +759,7 @@ div .text {
   align-items: center;
   animation: fromUp 1s linear;
   position: relative;
+  color: var(--dark);
 }
 @keyframes fromUp {
   from{
